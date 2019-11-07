@@ -1,5 +1,0 @@
-# OFF: Auto detect text files and perform LF normalization
-*.txt text
-*.html text
-*.css txt
-*.js text

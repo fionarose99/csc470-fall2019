@@ -1,0 +1,16 @@
+## *Mailroomery*
+
+### 'The Company Way'
+In Mailroomery, the player finds themselves in the role of J. Pierrepont Finch, a bright young worker in the mailroom of the World Wide Wicket corporation. Their primary goal to is to sort mail from the Company's inbox to its various outboxes, outbound to different World Wide Wicket departments. However, to be one of the 'lucky golden few' and rise in the world of business, Finch knows that mailroom is a place out of which she must get. Therefore, in addition to sorting all the mail on time and in an orderly fashion, following boss Mr. Twimble's advice to exercise 'bold caution' and learn 'The Company Way,' Finch may attempt to get promoted faster by focusing on sorting mail to certain departments. She may make these sorting decisions based on clues from her enemies, Bud Frump among them, and allies, Rosemary the best of them. 
+
+### 'How To'
+*Mailroomery* will be based primarily on timers and meters. Letters that enter the 'inbox' area of the mailroom will be marked by color, their color corresponding with the department they're going to. Messengers will serve as outboxes, placed near the bottom of the map, marked in the color of their department for easy matching. The player will be able to carry only a certain number of letters at a time, adding another layer of resource and time management. Messengers will come and go based on timers. In order to be satisfied, their 'Ready To Go' meter must be filled. Each letter fills up the meter slightly. Letters from the wrong category decrease the meter. Messengers each have a timer which starts when they arrive in the mailroom; the more seconds are left on the timer when their 'Ready To Go' meter is filled, the more their favor for Young Finch increases.
+
+Movement in the game will be click-and-go based. When the player clicks on a part of the map, Finch will start to move there. When they click on a letter, Finch will pick it up once she collides with it. When she collides with a messenger, the last letter she picked up will collide with the messenger and the resulting interaction will take place.
+
+### 'Rosemary'
+Finch is clear-eyed and eager indeed, but since this is the year 1961, she must also be concerned to keep her identity as a woman a secret. When she collides with a messenger or other character on the map, if she stays in contact with them for too long, they will find out her secret. If they do, they all will chase her for 5 seconds; she must avoid them or it's game over. Therefore, if she needs to deliver many letters to a single messenger at once, she must take care to time this out appropriately. But, as she determines her allies and enemies, they can help or hurt her quest. In addition to getting clues on which departments' letters will advance her career faster, talking to enemies increases the time she'll be chased and talking to allies decreases that time.
+
+At the end of the game in a secret Easter Egg, if Finch succeeds and she has maxed out her ally bar with Rosemary, she will discover her secret and accept her anyway. They will both go on to succeed--together.
+
+^~^
