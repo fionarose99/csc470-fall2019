@@ -17,9 +17,17 @@ public class GameManager : MonoBehaviour
     //public Text nameText;
     //public Image portraitImage;
 
+    public GameObject letterPrefab;
+    public Vector3 RosemaryBoxCoords;
+    public Vector3 BudBoxCoords;
+    //public Vector3 letterRotVector;
+
     void Start()
     {
-        
+        //Quaternion letterRotQuat = Quaternion.Euler(letterRotVector); // Allows for specific angle declared in Vector3 format in the inspector
+        //Instantiate(letterPrefab, RosemaryBoxCoords, letterRotQuat);
+        Instantiate(letterPrefab, RosemaryBoxCoords, Quaternion.identity);
+        Instantiate(letterPrefab, BudBoxCoords, Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -52,24 +60,25 @@ public class GameManager : MonoBehaviour
                         selectedUnit.destination = hit.point;
                     }
                 }
-                else
-                {
+                //else
+                //{
                     // If we're here, raycast hit nothing, deselect
-                    if (selectedUnit != null)
-                    {
-                        selectedUnit.selected = false;
+                   // if (selectedUnit != null)
+                    //{
+                        //selectedUnit.selected = false;
                         //selectedUnit.setColorOnMouseState();
-                        selectedUnit = null;
+                        //selectedUnit = null;
                         //updateSelectedPanelUI();
-                    }
-                }
+                    //}
+                //}
+                // [COMMENTED OUT DESELECT PROTOCOL - ONLY 1 CONTROLLABLE UNIT ANYWAY]
             }
         }
     }
 
     // If something selected previously, unselect it, update color
-    public void selectUnit(FinchScript unit)
-    {
+    //public void selectUnit(FinchScript unit)
+    //{
         //if (selectedUnit != null)
         //{
             //selectedUnit.selected = false;
@@ -77,15 +86,14 @@ public class GameManager : MonoBehaviour
         //}
 
         // Set selected unit to one we just passed in
-        selectedUnit = unit;
+      //  selectedUnit = unit;
 
-        if (selectedUnit != null)
-        {
+        //if (selectedUnit != null)
+        //{
             // If there is a selected unit update (color)
-            selectedUnit.selected = true;
+          //  selectedUnit.selected = true;
             //selectedUnit.setColorOnMouseState();
-        }
+        //}
 
         //updateSelectPanelUI();
-    }
 }

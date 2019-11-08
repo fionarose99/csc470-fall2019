@@ -32,9 +32,12 @@ public class FinchScript : MonoBehaviour
     public Vector3 destination;
     public Renderer rend;
     GameManager gm;
+    public float LetterCounter;
 
     void Start()
     {
+        int LetterCounter = 0;
+
         // 1. Get reference to a gameObject using GameObject.Find()
         // 2. Use GetComponent() function to get reference to a 
         // component on GameObject
@@ -74,6 +77,20 @@ public class FinchScript : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "RosemaryLetter")
+        {
+            // In Finch: Add a pink increment to on-screen stack representation
+            LetterCounter += 1.0f;
+        }
+        if (other.gameObject.tag == "BudLetter")
+        {
+            // In Finch: Add a blue increment to on-screen stack representation
+            LetterCounter += 1.0f;
+        }
+    }
+
     // Set color based on hover and select variables
     //public void setColorOnMouseState()
     //{
@@ -89,7 +106,8 @@ public class FinchScript : MonoBehaviour
     //{
     //rend.material.color = defaultColor;
     //}
-    
+
+
     // Following functions called based on what mouse is doing
     // with regards to the gameObject this script is attached to
     private void OnMouseOver()
@@ -102,17 +120,18 @@ public class FinchScript : MonoBehaviour
         hover = false;
         //setColorOnMouseState();
     }
-    private void OnMouseDown()
-    {
-        selected = !selected;
-        if (selected)
-        {
-            gm.selectUnit(this);
-        }
-        else
-        {
-            gm.selectUnit(null);
-        }
+
+    //private void OnMouseDown()
+    //{
+     //   selected = !selected;
+       // if (selected)
+        //{
+          //  gm.selectUnit(this);
+        //}
+        //else
+        //{
+          //  gm.selectUnit(null);
+        //}
         //setColorOnMouseState();
-    }
+    //}
 }
