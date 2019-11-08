@@ -1138,29 +1138,18 @@ Transform:
   m_Father: {fileID: 786740762}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1268921786 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 353665603928088931, guid: 4f98fecd6f0c8c048928418885f22ca0,
+--- !u!114 &1268921787 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1268921787, guid: 4f98fecd6f0c8c048928418885f22ca0,
     type: 3}
   m_PrefabInstance: {fileID: 1611519068}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1268921787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1268921786}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ac7e5d01eca9a54995a4eefbf94d504, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  selected: 0
-  name: 
-  portrait: {fileID: 0}
-  destination: {x: 0, y: 0, z: 0}
-  rend: {fileID: 0}
 --- !u!1 &1329218757
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,7 +1693,7 @@ GameObject:
   - component: {fileID: 1832508499}
   m_Layer: 0
   m_Name: RosemaryBox
-  m_TagString: Untagged
+  m_TagString: RosemaryBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1796,7 +1785,7 @@ GameObject:
   - component: {fileID: 1961742501}
   m_Layer: 0
   m_Name: BudBox
-  m_TagString: Untagged
+  m_TagString: BudBox
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
