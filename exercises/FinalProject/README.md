@@ -1,4 +1,5 @@
-# Final Project Proposal (Draft v1 - 11/11/19)
+# Final Project Proposal 
+*(Draft v1 - 11/11/19)*
 
 ## "Wheelie"
 In *Wheelie*, the player would navigate a series of obstacles in a manual wheelchair. Most of the game would take place on a ~3 lane course in the style of early games in the *F-Zero* franchise. Games in the legacies of *Mario Kart*, certain 3D *Sonic* titles, and *Crash Bandicoot* are also comparable. But, time permitting, different levels could emulate different styles of historic games, including side-scrolling (visa vie *Mario Bros*).
