@@ -49,7 +49,7 @@ Sound effects will consist of things like a "vroom" or spokes-clattering sound f
 * Lives counter (GUI)
 * Coins counter (GUI)
 * Shop (GUI) with **two** power-ups (extra life, **temporary invincibility**), **animation**, **sound effects**
-* Level timer (GUI)
+* **Level timer** (GUI)
 * High-score counter based on **time-remaining-to-coins** conversion + coins collected, **attached to player name entry**
 * Game Over Screen (with sound effects)
 
