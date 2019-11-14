@@ -36,7 +36,7 @@ Sound effects will consist of things like a "vroom" or spokes-clattering sound f
 * Lives counter (GUI)
 * Coins counter (GUI)
 * **High-score counter** based on coins collected
-* **Shop** (GUI) with one power-up (extra life)
+* **Shop** (GUI) with one power-up (**extra life**)
 * Game Over Screen (with **sound effects**)
 
 ### High-Bar
