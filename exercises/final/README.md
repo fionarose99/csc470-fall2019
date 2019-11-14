@@ -31,7 +31,7 @@ Sound effects will consist of things like a "vroom" or spokes-clattering sound f
 * Start menu, start button, **player name entry**
 * 3rd-person-behind, unangled, **camera-follow-player** POV
 * Basic player avatar **that looks like a wheelchair**
-* Player movement (with character controller)
+* Player movement (with character controller, **animation**)
 * **Two** courses with one kind of obstacle, coins (with sound effects), same music track
 * Lives counter (GUI)
 * Coins counter (GUI)
@@ -57,7 +57,7 @@ Sound effects will consist of things like a "vroom" or spokes-clattering sound f
 * Class 11/18: Player movement (with collision detectors set up), basic camera setup, one course, obstacle prefabs, coin prefabs, GUI Designs/Interface Sketches. **1/2 of Low Bar**
 * Class 11/21: Coin-player and obstacle-player collisions resulting in changes to lives counter and coin counter, start screen, Game Over screen **Mostly finished with Low Bar**
 * Class 11/25: Sound effects, music, start screen, game over screen. **Low Bar finished and refined**
-* Class 12/5: Camera follow player, add a course, high score counter, game over screen with sound effects, lay out shop GUI, wheelchair avatar. **3/4 of additions for Target**
+* Class 12/5: Camera follow player, add a course, high score counter, game over screen with sound effects, lay out shop GUI, player animation, wheelchair avatar. **3/4 of additions for Target**
 * Class (or office hours) 12/9: Finish shop, refine. **Finish Target**
 * On or before 12/10: Add as much of High-Bar as possible, build to WebGL (and troubleshoot). **Some of High Bar, polishes**
 * On or before 12/11: Write one-pager, take screenshots for website, seek advice on website setup, take footage for trailer **Finalizing**
