@@ -1,3 +1,6 @@
+Note to self: Can use idle animation to have a "do nothing" before transition to another animation is triggered by a trigger in the animator, and those trigger components can be thrown true or false/have their values edited from scripts
+
+
 # "Wheelie" - Final Project Design Document
 *11/14/19*
 
