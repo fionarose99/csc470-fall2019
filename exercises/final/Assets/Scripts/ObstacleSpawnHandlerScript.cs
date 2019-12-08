@@ -19,7 +19,7 @@ public class ObstacleSpawnHandlerScript : MonoBehaviour
         negorpos = plusorminusarray[Random.Range(0,plusorminusarray.Length)];
         Debug.Log("negorpos value = " + negorpos);
         Debug.Log("initial z val = " + transform.position.z);
-        randomRangeVal = (transform.position.z + posModulator) * negorpos;
+        randomRangeVal = (posModulator) * negorpos;
         Debug.Log("Random Range Val = " + randomRangeVal);
         transform.position += new Vector3(0, 0, randomRangeVal);
     }

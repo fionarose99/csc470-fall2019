@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -9,6 +7,7 @@ public class PlayerMovementScript : MonoBehaviour
     public GameManager gm;
     public Renderer PlayerBodyRend;
     public GameObject PlayerBody;
+    public Animator animator;
     public bool colorCycle;
     float colorPosition = 0;
     float colorChangeSpeed;
@@ -22,6 +21,7 @@ public class PlayerMovementScript : MonoBehaviour
     // set MAXSPD, MINSPD, moveSpd, turnSpd - also public (change in Unity editor)
 
     // Jumping Setup
+    public bool WheelieAnimationIsPlaying = false;
     float yVelocity = 0;
     public float jumpForce = 2.5f;
     public float gravityModifier = 0.025f;
@@ -42,7 +42,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         colorChangeSpeed = moveSpd / (throttle * 1.5f);
 
-        if(colorCycle)
+        if (colorCycle)
         {
             colorPosition += colorChangeSpeed * Time.deltaTime;
             PlayerBodyRend.material.color = Color.HSVToRGB(colorPosition % 1.0f, 0.8f, 1);
@@ -70,7 +70,7 @@ public class PlayerMovementScript : MonoBehaviour
             {
                 moveSpd += throttle * Time.deltaTime;
             }
-            
+
             // else, decrease speed, stop if hit MINSPD
             else
             {
@@ -91,8 +91,43 @@ public class PlayerMovementScript : MonoBehaviour
         {
             transform.Rotate(0, turnSpd * Time.deltaTime, 0);
         }
-        // jump on W (+ add animations)
+
+        // Wheelie on W
+        if(Input.GetKeyDown(KeyCode.W))
+        {
+            animator.SetTrigger("WheelieActivated");
+        }
+
+        //// jump on W (+ add animations)
+        //if (cc.isGrounded)
+        //{
+        //    if (!prevIsGrounded && cc.isGrounded)
+        //    {
+        //        yVelocity = 0;
+        //    }
+        //    if (Input.GetKeyDown(KeyCode.W))
+        //    {
+        //        yVelocity = jumpForce;
+        //    }
+        //}
+        //else
+        //{
+        //    if (Input.GetKeyUp(KeyCode.W))
+        //    {
+        //        yVelocity = 0;
+        //    }
+
+        //    yVelocity += Physics.gravity.y * gravityModifier;
+        //}
+
+        //float vAxis = Input.GetAxis("Vertical");
+        //Vector3 amountToMove = transform.forward * moveSpd * Time.deltaTime * vAxis;
+        //amountToMove.y = yVelocity;
+        //cc.Move(amountToMove);
+        //prevIsGrounded = cc.isGrounded;
     }
+
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -115,7 +150,7 @@ public class PlayerMovementScript : MonoBehaviour
                 collideFlag = false;
             }
 
-            
+
 
             //Vector3 skipDir;
             //skipDir.x = transform.forward.x;
