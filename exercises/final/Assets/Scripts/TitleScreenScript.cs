@@ -16,7 +16,9 @@ public class TitleScreenScript : MonoBehaviour
     // public Renderer rend;
 
     public Image startButtonImage;
-    
+    public AudioClip StartSound;
+    AudioSource audio;
+
     //float rVal = 1.0f;
     //float gVal = 1.0f;
     //float bVal = 1.0f;
@@ -29,6 +31,7 @@ public class TitleScreenScript : MonoBehaviour
         //StartButtonText = gameObject.GetComponent<StartButtonText>();
         colorCycle = true;
         PlayerPrefs.SetInt("lvlStart", 0);
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -86,6 +89,8 @@ public class TitleScreenScript : MonoBehaviour
 
     public void StartButtonPressed()
     {
+        //AudioSource.PlayClipAtPoint(StartSound, transform.position);
+        audio.PlayOneShot(StartSound, 1.0f);
         PlayerPrefs.SetInt("lvlStart", 1);
         Debug.Log("Button Pressed Function Activated in Title Screen Script");
         SceneManager.LoadScene("Lvl1", LoadSceneMode.Single);

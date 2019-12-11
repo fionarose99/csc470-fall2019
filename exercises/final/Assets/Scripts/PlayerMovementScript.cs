@@ -9,6 +9,11 @@ public class PlayerMovementScript : MonoBehaviour
     public GameObject PlayerBody;
     public GameObject PlayerModel;
     public bool colorCycle;
+    public AudioClip CoinSound;
+    public AudioClip ObstacleSound;
+    public AudioSource audio;
+    public float CoinVolume;
+    public float ObstacleVolume;
     bool checkWheelie;
     float colorPosition = 0;
     float colorChangeSpeed;
@@ -40,8 +45,6 @@ public class PlayerMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        checkWheelie = GetComponent<PlayerAnimationScript>().WheelieAnimationIsPlaying;
-
         colorChangeSpeed = moveSpd / (throttle * 1.5f);
 
         if (colorCycle)
@@ -137,24 +140,30 @@ public class PlayerMovementScript : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Coin"))
         {
+
             Destroy(other.gameObject);
             gm.Coins += 1;
             gm.SetCoinsText();
+            audio.PlayOneShot(CoinSound, CoinVolume);
             Debug.Log("CoinCollisionRegistered");
         }
 
         if (other.gameObject.CompareTag("Obstacle"))
         {
             collideFlag = true;
-            if (collideFlag && checkWheelie)
+            Debug.Log("Obstacle collideFlag = true");
+            checkWheelie = PlayerModel.GetComponent<PlayerAnimationScript>().WheelieAnimationIsPlaying;
+            Debug.Log("WheelieAnimationCheck: " + checkWheelie);
+            if (collideFlag && !checkWheelie)
             {
                 gm.Lives -= 1;
                 gm.SetLivesText();
                 Debug.Log("ObstacleCollisionRegistered");
+                audio.PlayOneShot(ObstacleSound, ObstacleVolume);
                 collideFlag = false;
             }
 
-
+            // OLD CODE
 
             //Vector3 skipDir;
             //skipDir.x = transform.forward.x;

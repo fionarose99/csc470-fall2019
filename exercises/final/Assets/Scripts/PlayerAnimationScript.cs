@@ -6,7 +6,10 @@ public class PlayerAnimationScript : MonoBehaviour
 {
     // References Setup
     public Animator animator;
+    public AudioClip WheelieSound;
+    public AudioSource audio;
     public bool WheelieAnimationIsPlaying = false;
+    public float WheelieVolume;
 
     // Start is called before the first frame update
     void Start()
@@ -20,7 +23,11 @@ public class PlayerAnimationScript : MonoBehaviour
         // Wheelie on W (handled in animation script)
         if(Input.GetKeyDown(KeyCode.W))
         {
+            Debug.Log("Before");
             animator.SetTrigger("WheelieActivated");
+            Debug.Log("WheelieAnimatorThrown");
+            audio.PlayOneShot(WheelieSound, WheelieVolume);
+            Debug.Log("WheelieAudioActive");
         }
     }
 }
