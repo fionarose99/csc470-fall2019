@@ -82,12 +82,13 @@ public class PlayerMovementScript : MonoBehaviour
             }
         }
 
-        // while D pressed, rotate right
+        // while A pressed, rotate left
         if (Input.GetKey(KeyCode.A))
         {
             transform.Rotate(0, -1 * turnSpd * Time.deltaTime, 0);
         }
-        // while A pressed, rotate left
+
+        // while D pressed, rotate right
         if (Input.GetKey(KeyCode.D))
         {
             transform.Rotate(0, turnSpd * Time.deltaTime, 0);
