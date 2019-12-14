@@ -25,9 +25,9 @@ public class PlayerAnimationScript : MonoBehaviour
         {
             Debug.Log("Before");
             animator.SetTrigger("WheelieActivated");
-            Debug.Log("WheelieAnimatorThrown");
+            Debug.Log("Set Trigger WheelieActivated In PlayerAnimScript");
             audio.PlayOneShot(WheelieSound, WheelieVolume);
-            Debug.Log("WheelieAudioActive");
+            Debug.Log("WheelieAudioActive PlayerAnimScript");
         }
     }
 }

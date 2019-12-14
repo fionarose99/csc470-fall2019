@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -10,13 +12,24 @@ public class PlayerMovementScript : MonoBehaviour
     public GameObject PlayerModel;
     public bool colorCycle;
     public AudioClip CoinSound;
-    public AudioClip ObstacleSound;
+    public AudioClip DamageSound;
     public AudioSource audio;
     public float CoinVolume;
-    public float ObstacleVolume;
-    bool checkWheelie;
+    public float DamageVolume;
+    bool IsWheelieAnimationPlaying;
     float colorPosition = 0;
     float colorChangeSpeed;
+    public Animator DamageAnimator;
+    public Animator GameOverAnimator;
+    float GameOverScreenTime = 0;
+    public AudioSource ExciteBikeAudio;
+    public Animator LevelCompleteAnimator;
+    float LevelCompleteScreenTime = 0;
+    public Animator HighScoreAnimator;
+    public GameObject FinishLinePrefab;
+    bool FinishLineCross = false;
+    public Collider FinishLineCollider;
+    float FinishLineCrossTime = 0;
 
     // Movement Setup
     public float minSpd;
@@ -45,6 +58,41 @@ public class PlayerMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(gm.Lives == 0)
+        {
+            GameOverAnimator.SetTrigger("GameOverTriggered");
+            gm.HighScore = (gm.LapCounter * gm.LapsMultiplier) + (gm.Coins * gm.CoinsMultiplier);
+            HighScoreAnimator.SetTrigger("HighScoreTriggered");
+            ExciteBikeAudio.volume = 0;
+
+            GameOverScreenTime += Time.deltaTime;
+            if(GameOverScreenTime >= 5)
+            {
+                SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
+            }
+        }
+
+        FinishLineCrossTime += Time.deltaTime;
+
+        if (gm.LapCounter >= gm.TotalLaps)
+        {
+            LevelCompleteAnimator.SetTrigger("LevelCompleteTriggered");
+            gm.HighScore = (gm.TimeToBeat - Mathf.RoundToInt(gm.FloatTimer)) + (gm.Coins * gm.CoinsMultiplier);
+            gm.SetHighScoreText();
+            HighScoreAnimator.SetTrigger("HighScoreTriggered");
+            ExciteBikeAudio.volume = 0.8f;
+            audio.volume = 0.3f;
+
+            LevelCompleteScreenTime += Time.deltaTime;
+            Debug.Log("LevelCompleteScreenTime = " + LevelCompleteScreenTime);
+            if(LevelCompleteScreenTime >= 5)
+            {
+                ExciteBikeAudio.volume = 0;
+                audio.volume = 0;
+                SceneManager.LoadScene("TitleScreen", LoadSceneMode.Single);
+            }
+        }
+
         colorChangeSpeed = moveSpd / (throttle * 1.5f);
 
         if (colorCycle)
@@ -138,30 +186,67 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Coin"))
+        if (other.gameObject.CompareTag("FinishLine"))
         {
+            FinishLineCrossTime = 0f;
+            gm.LapCounter += 1;
+            gm.SetLapCounterText();
+            FinishLineCollider.enabled = false;
+            Debug.Log("Collider enabled status = " + FinishLineCollider.enabled);
+            FinishLineCross = true;
 
-            Destroy(other.gameObject);
-            gm.Coins += 1;
-            gm.SetCoinsText();
+            Debug.Log("FinishLineCollisionRegistered");
+
+            //if (FinishLineCross)
+            //{
+            Vector3 FinishLinePos = new Vector3(-9.19f, -0.03f, -24.98f);
+            GameObject FinishLine = Instantiate(FinishLinePrefab, FinishLinePos, transform.rotation);
+            Debug.Log("New FinishLine Generated");
+            //}
+
+            if(FinishLineCrossTime >= 3f)
+            {
+                FinishLineCollider.enabled = true;
+            }
+            
+            Debug.Log("New Collider enabled status = " + FinishLineCollider.enabled);
+            //FinishLineCross = false;
+
+        }
+
+        if (other.gameObject.CompareTag("Coin"))
+        { 
             audio.PlayOneShot(CoinSound, CoinVolume);
             Debug.Log("CoinCollisionRegistered");
+            Destroy(other.gameObject);
+
+            if (gm.Lives >= 1 && gm.LapCounter < gm.TotalLaps)
+            {
+                gm.Coins += 1;
+                gm.SetCoinsText();
+            }
         }
 
         if (other.gameObject.CompareTag("Obstacle"))
         {
             collideFlag = true;
             Debug.Log("Obstacle collideFlag = true");
-            checkWheelie = PlayerModel.GetComponent<PlayerAnimationScript>().WheelieAnimationIsPlaying;
-            Debug.Log("WheelieAnimationCheck: " + checkWheelie);
-            if (collideFlag && !checkWheelie)
+            IsWheelieAnimationPlaying = PlayerModel.GetComponent<PlayerAnimationScript>().WheelieAnimationIsPlaying;
+            Debug.Log("IsWheelieAnimationPlaying? PlayerMoveScript: " + IsWheelieAnimationPlaying);
+
+            if (gm.Lives >= 1 && gm.LapCounter < gm.TotalLaps)
             {
-                gm.Lives -= 1;
-                gm.SetLivesText();
-                Debug.Log("ObstacleCollisionRegistered");
-                audio.PlayOneShot(ObstacleSound, ObstacleVolume);
-                collideFlag = false;
+                if (collideFlag && !IsWheelieAnimationPlaying)
+                {
+                    DamageAnimator.SetTrigger("DamageTriggered");
+                    gm.Lives -= 1;
+                    gm.SetLivesText();
+                    Debug.Log("ObstacleCollisionRegistered");
+                    audio.PlayOneShot(DamageSound, DamageVolume);
+                    collideFlag = false;
+                }
             }
+            
 
             // OLD CODE
 

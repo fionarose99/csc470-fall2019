@@ -10,6 +10,17 @@ public class GameManager : MonoBehaviour
     public Text LivesText;
     public int Coins;
     public Text CointsText;
+    public float FloatTimer = 0.0f;
+    public Text TimerText;
+    public Text HighScoreText;
+    public int HighScore = 0;
+    public int LapCounter;
+    public Text LapCounterText;
+    public int TotalLaps;
+    public int TimeToBeat;
+    public int CoinsMultiplier;
+    public int LapsMultiplier;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +29,14 @@ public class GameManager : MonoBehaviour
 
         SetLivesText();
         SetCoinsText();
+        SetTimerText();
+
+        Debug.Log("LapCounterInt = " + LapCounter);
+        Debug.Log("LapCounterText before function = " + LapCounterText.text);
+        SetLapCounterText();
+        Debug.Log("LapCounterText after function = " + LapCounterText.text);
+
+        SetHighScoreText();
 
         DontDestroyOnLoad(gameObject);
         if(PlayerPrefs.GetInt("lvlStart") == 1)
@@ -29,8 +48,18 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Spawn Range: + or - 2 in z-direction
+        //TimerScore = Mathf.RoundToInt(FloatTimer)
+        //HighScore = TimerScore
+        //Spawn Range: + or - 2 in z-direction
         //RawImage onUI
+        if(Lives >= 0 && LapCounter < TotalLaps)
+        {
+            FloatTimer += Time.deltaTime;
+            FloatTimer *= 100;
+            FloatTimer = Mathf.RoundToInt(FloatTimer);
+            FloatTimer /= 100;
+            SetTimerText();
+        }
     }
 
     public void SetCoinsText()
@@ -40,5 +69,20 @@ public class GameManager : MonoBehaviour
     public void SetLivesText()
     {
         LivesText.text = Lives.ToString();
+    }
+
+    public void SetTimerText()
+    {
+        TimerText.text = FloatTimer.ToString();
+    }
+
+    public void SetLapCounterText()
+    {
+        LapCounterText.text = "LAP: " + LapCounter.ToString() + "/" + TotalLaps.ToString();
+    }
+
+    public void SetHighScoreText()
+    {
+        HighScoreText.text = "HIGH SCORE: " + HighScore.ToString();
     }
 }
