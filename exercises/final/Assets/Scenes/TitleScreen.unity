@@ -233,7 +233,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.2000122, y: -164.00002}
+  m_AnchoredPosition: {x: -0.19995117, y: -164}
   m_SizeDelta: {x: -33.7, y: -357.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &548984309
@@ -310,8 +310,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.20001, y: -34}
-  m_SizeDelta: {x: 295.6, y: 86.7}
+  m_AnchoredPosition: {x: -0.19995117, y: -19.87201}
+  m_SizeDelta: {x: 295.59998, y: 86.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &974140607
 MonoBehaviour:
@@ -597,6 +597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartButton: {fileID: 974140607}
   colorChangeSpeed: 1.2
+  audioListener: {fileID: 1442033503}
   startButtonImage: {fileID: 974140608}
   StartSound: {fileID: 8300000, guid: ef7aef172e617a54aa6e0efbc44005e0, type: 3}
 --- !u!82 &1274938487
@@ -880,7 +881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.2000122, y: 112}
+  m_AnchoredPosition: {x: -0.19995117, y: 112}
   m_SizeDelta: {x: -89.1, y: -272.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1718228271
@@ -982,7 +983,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: dbb2cf455b5d4ed4a961bf735c46929f, type: 3}
     m_FontSize: 170
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 170
     m_Alignment: 4
@@ -1113,8 +1114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.8, y: 0}
-  m_SizeDelta: {x: 753, y: 76.7}
+  m_AnchoredPosition: {x: 0.8, y: 0.6}
+  m_SizeDelta: {x: 753, y: 80.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2019706271
 MonoBehaviour:
@@ -1138,12 +1139,12 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 126574a407500df4cae123c8f9f14a99, type: 3}
-    m_FontSize: 15
+    m_FontSize: 13
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0

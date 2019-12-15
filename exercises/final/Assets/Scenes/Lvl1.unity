@@ -365,7 +365,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: fced536190df89c448522cc7700282e1, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 60
     m_Alignment: 3
@@ -1063,8 +1063,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.6, y: -100}
-  m_SizeDelta: {x: 370.8, y: 59.8}
+  m_AnchoredPosition: {x: -13.6, y: -87.8}
+  m_SizeDelta: {x: 370.8, y: 35.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &278676798
 MonoBehaviour:
@@ -1079,7 +1079,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1090,7 +1090,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 126574a407500df4cae123c8f9f14a99, type: 3}
     m_FontSize: 30
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 3
     m_MaxSize: 40
     m_Alignment: 0
@@ -1158,7 +1158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlStart: 1
-  Lives: 5
+  Lives: 3
   LivesText: {fileID: 140287502}
   Coins: 0
   CointsText: {fileID: 387483542}
@@ -1200,7 +1200,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1474,8 +1474,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 11.8, y: -24.12}
-  m_SizeDelta: {x: 153.28, y: 37.72}
+  m_AnchoredPosition: {x: 11.8, y: -26.46}
+  m_SizeDelta: {x: 153.3, y: 26.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &381474923
 MonoBehaviour:
@@ -1501,7 +1501,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 2addac8ca31c54944aa0ccfd1a5def7e, type: 3}
     m_FontSize: 25
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 2
     m_MaxSize: 40
     m_Alignment: 3
@@ -1580,7 +1580,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: fced536190df89c448522cc7700282e1, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 60
     m_Alignment: 5
@@ -3352,7 +3352,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh51592
+  m_Name: pb_Mesh25912
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -4434,7 +4434,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 2addac8ca31c54944aa0ccfd1a5def7e, type: 3}
     m_FontSize: 90
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 0
     m_MaxSize: 90
     m_Alignment: 4
@@ -6713,7 +6713,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 2addac8ca31c54944aa0ccfd1a5def7e, type: 3}
     m_FontSize: 80
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 8
     m_MaxSize: 90
     m_Alignment: 4
@@ -6765,8 +6765,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.6, y: 14.180992}
-  m_SizeDelta: {x: 161.65, y: 48.708}
+  m_AnchoredPosition: {x: 13.289991, y: 12.61}
+  m_SizeDelta: {x: 156.26, y: 51.84}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1327448889
 MonoBehaviour:
@@ -6781,7 +6781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.9411765}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -6790,10 +6790,10 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: fced536190df89c448522cc7700282e1, type: 3}
-    m_FontSize: 60
+    m_FontSize: 50
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 6
+    m_BestFit: 1
+    m_MinSize: 0
     m_MaxSize: 60
     m_Alignment: 3
     m_AlignByGeometry: 0
@@ -6801,7 +6801,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2.05
+  m_Text: TEST
 --- !u!222 &1327448890
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12717,7 +12717,7 @@ PrefabInstance:
     - target: {fileID: 7683573870997585949, guid: 80959a2cc7e49a74fa0b97564ac9b3e8,
         type: 3}
       propertyPath: minSpd
-      value: 0
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 7683573870997585949, guid: 80959a2cc7e49a74fa0b97564ac9b3e8,
         type: 3}
@@ -12757,7 +12757,7 @@ PrefabInstance:
     - target: {fileID: 7683573870997585949, guid: 80959a2cc7e49a74fa0b97564ac9b3e8,
         type: 3}
       propertyPath: DamageVolume
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7683573870997585949, guid: 80959a2cc7e49a74fa0b97564ac9b3e8,
         type: 3}
@@ -12795,6 +12795,11 @@ PrefabInstance:
       propertyPath: FinishLineCollider
       value: 
       objectReference: {fileID: 2054885628}
+    - target: {fileID: 7683573870997585949, guid: 80959a2cc7e49a74fa0b97564ac9b3e8,
+        type: 3}
+      propertyPath: audioListener
+      value: 
+      objectReference: {fileID: 5980280249350149136}
     - target: {fileID: 363731970, guid: 80959a2cc7e49a74fa0b97564ac9b3e8, type: 3}
       propertyPath: WheelieSound
       value: 
@@ -12829,6 +12834,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80959a2cc7e49a74fa0b97564ac9b3e8, type: 3}
+--- !u!81 &5980280249350149136 stripped
+AudioListener:
+  m_CorrespondingSourceObject: {fileID: 982750685, guid: 80959a2cc7e49a74fa0b97564ac9b3e8,
+    type: 3}
+  m_PrefabInstance: {fileID: 5980280249350149135}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8299673887917775456
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -13,6 +13,8 @@ public class TitleScreenScript : MonoBehaviour
     bool colorCycle;
     float colorPosition = 0;
     public float colorChangeSpeed;
+    public AudioListener audioListener;
+
     // public Renderer rend;
 
     public Image startButtonImage;
@@ -37,7 +39,8 @@ public class TitleScreenScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(colorCycle == true)
+        audioListener.enabled = true;
+        if (colorCycle == true)
         {
             colorPosition += colorChangeSpeed * Time.deltaTime;
             startButtonImage.color = Color.HSVToRGB(colorPosition % 1.0f, 0.8f, 1);
@@ -91,6 +94,7 @@ public class TitleScreenScript : MonoBehaviour
     {
         //AudioSource.PlayClipAtPoint(StartSound, transform.position);
         audio.PlayOneShot(StartSound, 1.0f);
+        audioListener.enabled = false;
         PlayerPrefs.SetInt("lvlStart", 1);
         Debug.Log("Button Pressed Function Activated in Title Screen Script");
         SceneManager.LoadScene("Lvl1", LoadSceneMode.Single);
