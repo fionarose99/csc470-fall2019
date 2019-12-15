@@ -34,6 +34,7 @@ public class TitleScreenScript : MonoBehaviour
         colorCycle = true;
         PlayerPrefs.SetInt("lvlStart", 0);
         audio = GetComponent<AudioSource>();
+        audio.playOnAwake = true;
     }
 
     // Update is called once per frame

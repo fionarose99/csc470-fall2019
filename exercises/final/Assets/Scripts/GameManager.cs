@@ -20,11 +20,14 @@ public class GameManager : MonoBehaviour
     public int TimeToBeat;
     public int CoinsMultiplier;
     public int LapsMultiplier;
+    public AudioSource ExciteBikeAudio;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        ExciteBikeAudio.playOnAwake = true;
+
         Debug.Log("lvlStart value = " + lvlStart);
 
         SetLivesText();
