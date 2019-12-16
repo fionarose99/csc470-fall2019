@@ -12643,7 +12643,7 @@ PrefabInstance:
     - target: {fileID: 7683573870997585949, guid: 80959a2cc7e49a74fa0b97564ac9b3e8,
         type: 3}
       propertyPath: minSpd
-      value: 5.5
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 7683573870997585949, guid: 80959a2cc7e49a74fa0b97564ac9b3e8,
         type: 3}
@@ -12726,6 +12726,11 @@ PrefabInstance:
       propertyPath: audioListener
       value: 
       objectReference: {fileID: 5980280249350149136}
+    - target: {fileID: 7683573870997585949, guid: 80959a2cc7e49a74fa0b97564ac9b3e8,
+        type: 3}
+      propertyPath: maxSpd
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 363731970, guid: 80959a2cc7e49a74fa0b97564ac9b3e8, type: 3}
       propertyPath: WheelieSound
       value: 

@@ -54,6 +54,8 @@ public class PlayerMovementScript : MonoBehaviour
     void Start()
     {
         prevIsGrounded = cc.isGrounded;
+        audioListener.enabled = true;
+
     }
 
     // Update is called once per frame
@@ -80,7 +82,7 @@ public class PlayerMovementScript : MonoBehaviour
 
         //FinishLineCrossTime += Time.deltaTime;
 
-        if (gm.LapCounter >= gm.TotalLaps)
+        if (gm.LapCounter >= gm.TotalLaps && gm.Lives > 0)
         {
             LevelCompleteScreenTime += Time.deltaTime;
             Debug.Log("LevelCompleteScreenTime = " + LevelCompleteScreenTime);
